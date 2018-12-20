@@ -107,14 +107,13 @@ registerBlockType( 'stramaxon/the-simplest-block', {
 		const blockInspectorControl = (
 			<InspectorControls>
 				<PanelBody>
-
 					<PanelColorSettings
 						title={ __( 'Background Color' ) }
 						colorValue={ blockBackgroundColor }
 						initialOpen={ false }
 						colorSettings={ [ {
-							value: ,
-							onChange: blockBackgroundColor,
+							value: blockBackgroundColor,
+							onChange: onChangeBackgroundColor,
 							colors: blockBackgroundColors, 
 							label: __( 'Select background color' ),
 						}] }

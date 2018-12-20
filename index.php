@@ -51,7 +51,7 @@ function stramaxon_register_block(){
 		filemtime( plugin_dir_path( __FILE__ ) . 'assets/css/style.css' ) // filemtime — Gets file modification time.
 	);
 
-	register_block_type( 'missio/alert', array(
+	register_block_type( 'stramaxon/the-simplest-block', array(
 		    'editor_script' => 'stramaxon_block_editor_script',
 		    'editor_style' => 'stramaxon_blocks_editor_style',
 	        'style' => 'stramaxon_blocks_frontend_style',
