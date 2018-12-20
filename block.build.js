@@ -76,12 +76,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wordpress_compose__ = __webpack_require__(24);
 /**
  * BLOCK: Basic with ESNext
- *
- * Registering a basic block with Gutenberg.
- * Simple block, renders and saves the same content without any interactivity.
- *
- * Using inline styles - no external stylesheet needed.  Not recommended!
- * because all of these styles will appear in `post_content`.
  */
 
 /**
@@ -114,13 +108,7 @@ var _wp$element = wp.element,
 var registerBlockType = wp.blocks.registerBlockType;
 
 /**
- * Register Alert Block.
- *
- *
- * @param  {string}   name     Block name.
- * @param  {Object}   settings Block settings.
- * @return {?WPBlock}          The block, if it has been successfully
- *                             registered; otherwise `undefined`.
+ * Register Simple Block.
  */
 
 registerBlockType('stramaxon/the-simplest-block', {
@@ -159,8 +147,6 @@ registerBlockType('stramaxon/the-simplest-block', {
 		function onChangeBackgroundColor(newBackground) {
 			setAttributes({ blockBackgroundColor: newBackground });
 		}
-
-		// classnames( className, "alert", {"alert-primary": !className.includes("is-style")} );
 
 		var blockBackgroundColors = [{ color: '#333', name: 'dark' }, { color: '#fff', name: 'light' }];
 
@@ -217,17 +203,6 @@ registerBlockType('stramaxon/the-simplest-block', {
 				wp.element.createElement(RichText.Content, {
 					value: props.attributes.content
 				})
-			),
-			props.attributes.alertDismissable && wp.element.createElement(
-				'button',
-				{ type: 'button', 'class': 'close', 'data-dismiss': 'alert', 'aria-label': 'Close' },
-				' ',
-				wp.element.createElement(
-					'span',
-					{ 'aria-hidden': 'true' },
-					'\xD7'
-				),
-				' '
 			)
 		);
 	}

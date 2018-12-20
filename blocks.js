@@ -1,11 +1,5 @@
 /**
  * BLOCK: Basic with ESNext
- *
- * Registering a basic block with Gutenberg.
- * Simple block, renders and saves the same content without any interactivity.
- *
- * Using inline styles - no external stylesheet needed.  Not recommended!
- * because all of these styles will appear in `post_content`.
  */
 
 
@@ -43,13 +37,7 @@ const { Component, Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
 
 /**
- * Register Alert Block.
- *
- *
- * @param  {string}   name     Block name.
- * @param  {Object}   settings Block settings.
- * @return {?WPBlock}          The block, if it has been successfully
- *                             registered; otherwise `undefined`.
+ * Register Simple Block.
  */
 
 registerBlockType( 'stramaxon/the-simplest-block', {
@@ -93,10 +81,6 @@ registerBlockType( 'stramaxon/the-simplest-block', {
 		}
 
 
-
-
-		// classnames( className, "alert", {"alert-primary": !className.includes("is-style")} );
-
 		const blockBackgroundColors = [
 		   { color: '#333', name: 'dark' },
 		   { color: '#fff', name: 'light' }
@@ -119,8 +103,6 @@ registerBlockType( 'stramaxon/the-simplest-block', {
 						}] }
 					>
 					</PanelColorSettings>
-
-
 				</PanelBody>
 			</InspectorControls>
 		);
@@ -169,8 +151,6 @@ registerBlockType( 'stramaxon/the-simplest-block', {
 				                value={ props.attributes.content }
 				             />
 				        </div>
-
-				         { props.attributes.alertDismissable && (<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>)}
 				</div>
 		);
 	},
